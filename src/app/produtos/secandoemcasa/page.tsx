@@ -1,6 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 export default function SecandoEmCasaPage() {
+  const links = {
+    simples: "https://pay.kiwify.com.br/umvXfs8?afid=yeiA381W",
+    depoimento: "https://pay.kiwify.com.br/GFeetjM?afid=yeiA381W",
+  };
+
+  function goTo(url: string) {
+    window.location.assign(url);
+  }
+
   return (
     <div className="bg-white flex flex-col p-0 m-0 w-full h-full font-[family-name:var(--font-geist-sans)]">
       <div className="w-full h-14 bg-red-500 text-white text-xl lg:text-2xl font-bold p-10 lg:p-2 text-center flex items-center justify-center">
@@ -22,6 +33,7 @@ export default function SecandoEmCasaPage() {
             width={440}
             height={440}
             className="rounded-2xl mx-auto"
+            priority
           />
           <div className="flex flex-col items-center justify-center w-full">
             <p className="font-semibold text-neutral-950 text-base lg:text-lg">
@@ -44,6 +56,7 @@ export default function SecandoEmCasaPage() {
             <button
               className="w-full mt-10 rounded-xl px-5 bg-green-600 text-white text-xl lg:text-2xl font-bold py-4 hover:cursor-pointer hover:opacity-80"
               type="button"
+              onClick={() => goTo(links.simples)}
             >
               QUERO EMAGRECER DE FORMA SAUDÁVEL!
             </button>
@@ -75,6 +88,7 @@ export default function SecandoEmCasaPage() {
               <button
                 className="w-full mt-10 rounded-xl px-5 bg-red-600 text-white text-xl lg:text-2xl font-bold py-4 hover:cursor-pointer hover:opacity-80"
                 type="button"
+                onClick={() => goTo(links.depoimento)}
               >
                 VEJA O DEPOIMENTO E CONFIRA OS RESULTADOS
               </button>
@@ -101,6 +115,7 @@ export default function SecandoEmCasaPage() {
               <button
                 className="w-full mt-10 rounded-xl px-5 bg-green-600 text-white text-xl lg:text-2xl font-bold py-4 hover:cursor-pointer hover:opacity-80"
                 type="button"
+                onClick={() => goTo(links.simples)}
               >
                 QUERO EMAGRECER DE FORMA SAUDÁVEL!
               </button>
@@ -111,6 +126,7 @@ export default function SecandoEmCasaPage() {
               width={440}
               height={440}
               className="rounded-2xl mx-auto"
+              loading="lazy"
             />
           </div>
         </div>
